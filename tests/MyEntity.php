@@ -8,10 +8,14 @@
  * @license http://opensource.org/licenses/MIT MIT License
  */
 
-namespace eArc\DataRedis;
+namespace eArc\DataRedisTests;
 
-interface ParameterInterface
+use eArc\Data\Entity\AbstractEntity;
+
+class MyEntity extends AbstractEntity
 {
-    const HASH_KEY_PREFIX = 'earc.data_redis.hash_key_prefix'; // default 'earc-data'
-    const REDIS_CONNECTION = 'earc.data_redis.connection'; // default ['localhost'] used as arguments for Redis::connect()
+    public function __construct(string $primaryKey)
+    {
+        $this->primaryKey = $primaryKey;
+    }
 }

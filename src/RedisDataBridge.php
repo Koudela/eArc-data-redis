@@ -25,6 +25,7 @@ class RedisDataBridge implements OnPersistInterface, OnLoadInterface, OnRemoveIn
     {
         $this->redis = new Redis();
         $this->hashKeyPrefix = di_param(ParameterInterface::HASH_KEY_PREFIX, 'earc-data');
+        $this->redis->connect(...di_param(ParameterInterface::REDIS_CONNECTION, ['localhost']));
     }
 
     public function onPersist(array $entities): void
