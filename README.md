@@ -22,8 +22,8 @@ use eArc\Data\Initializer;
 Initializer::init();
 ```
 
-Then register the earc/data-redis library to the `onLoad`, `onPersit` and `onRemove` 
-events.
+Then register the earc/data-redis bridge to the earc/data `onLoad`, `onPersit` 
+and `onRemove` events.
 
 ```php
 use eArc\Data\ParameterInterface;
